@@ -36,7 +36,7 @@ public class StreamApi1 {
 		// instead of writting dis we can write in lambda
 		
 		lists.stream()
-			 .filter(StreamApi1::result)
+			 .filter(StreamApi1::notSagar)
 			 .forEach(System.out::println);
 		System.out.println("---------------------------------");
 		
@@ -45,7 +45,7 @@ public class StreamApi1 {
 		lists.stream().filter(name->name.equals("sagar")).forEach(name->System.out.println(name));
 	
 	}
-	private static boolean result(String a) {
+	private static boolean notSagar(String a) {
 		return !a.equals("sagar");
 	}
 
