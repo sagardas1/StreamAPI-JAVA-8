@@ -5,7 +5,7 @@ import java.util.function.Consumer;
 import java.util.function.Predicate;
 
 public class StreamApi1 {
-	
+
 	public static void main(String[] args) {
 		List<String> lists=Arrays.asList("sagar","bhargav","ravi");
 		//foreachMethod
@@ -32,6 +32,21 @@ public class StreamApi1 {
 				}
 			});
 		
+		System.out.println("---------------------------------");
+		// instead of writting dis we can write in lambda
+		
+		lists.stream()
+			 .filter(StreamApi1::result)
+			 .forEach(System.out::println);
+		System.out.println("---------------------------------");
+		
+		
+		//lambda
+		lists.stream().filter(name->name.equals("sagar")).forEach(name->System.out.println(name));
+	
+	}
+	private static boolean result(String a) {
+		return !a.equals("sagar");
 	}
 
 }
